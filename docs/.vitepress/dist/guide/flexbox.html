@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Flexbox | CSS</title>
+    <meta name="description" content="Just playing around.">
+    <link rel="stylesheet" href="/assets/style.ea6c64cc.css">
+    <link rel="modulepreload" href="/assets/app.cbd7a6cf.js">
+    <link rel="modulepreload" href="/assets/guide_flexbox.md.835565b2.lean.js">
+    
+    <script>(()=>{const e=localStorage.getItem("vitepress-theme-appearance"),a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-6b5fd0a9><!--[--><!--]--><!--[--><span tabindex="-1" data-v-45f6ae50></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-45f6ae50> Skip to content </a><!--]--><!----><header class="VPNav" data-v-6b5fd0a9 data-v-0e356168><div class="VPNavBar has-sidebar" data-v-0e356168 data-v-8856f192><div class="container" data-v-8856f192><div class="VPNavBarTitle has-sidebar" data-v-8856f192 data-v-6a6f7ff6><a class="title" href="/" data-v-6a6f7ff6><!----><!--[-->CSS<!--]--></a></div><div class="content" data-v-8856f192><!----><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-8856f192 data-v-a30758ee><span id="main-nav-aria-label" class="visually-hidden" data-v-a30758ee>Main Navigation</span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/guide/decoration.html" data-v-a30758ee data-v-8fba5fa8 data-v-5704c677><!--[-->指南<!--]--><!----></a><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-8856f192 data-v-311055f2><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" aria-label="toggle dark mode" data-v-311055f2 data-v-781f9d1b data-v-1dda4c9c><span class="check" data-v-1dda4c9c><span class="icon" data-v-1dda4c9c><!--[--><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="sun" data-v-781f9d1b><path d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z"></path><path d="M12,4c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,3.6,12.6,4,12,4z"></path><path d="M12,24c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,23.6,12.6,24,12,24z"></path><path d="M5.6,6.6c-0.3,0-0.5-0.1-0.7-0.3L3.5,4.9c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C6.2,6.5,5.9,6.6,5.6,6.6z"></path><path d="M19.8,20.8c-0.3,0-0.5-0.1-0.7-0.3l-1.4-1.4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C20.3,20.7,20,20.8,19.8,20.8z"></path><path d="M3,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S3.6,13,3,13z"></path><path d="M23,13h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path><path d="M4.2,20.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C4.7,20.7,4.5,20.8,4.2,20.8z"></path><path d="M18.4,6.6c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C18.9,6.5,18.6,6.6,18.4,6.6z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="moon" data-v-781f9d1b><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg><!--]--></span></span></button></div><!----><div class="VPFlyout VPNavBarExtra extra" data-v-8856f192 data-v-0562f5c0 data-v-8dccea88><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-8dccea88><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="icon" data-v-8dccea88><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="5" cy="12" r="2"></circle></svg></button><div class="menu" data-v-8dccea88><div class="VPMenu" data-v-8dccea88 data-v-e73581a2><!----><!--[--><!--[--><!----><div class="group" data-v-0562f5c0><div class="item appearance" data-v-0562f5c0><p class="label" data-v-0562f5c0>Appearance</p><div class="appearance-action" data-v-0562f5c0><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" aria-label="toggle dark mode" data-v-0562f5c0 data-v-781f9d1b data-v-1dda4c9c><span class="check" data-v-1dda4c9c><span class="icon" data-v-1dda4c9c><!--[--><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="sun" data-v-781f9d1b><path d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z"></path><path d="M12,4c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,3.6,12.6,4,12,4z"></path><path d="M12,24c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,23.6,12.6,24,12,24z"></path><path d="M5.6,6.6c-0.3,0-0.5-0.1-0.7-0.3L3.5,4.9c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C6.2,6.5,5.9,6.6,5.6,6.6z"></path><path d="M19.8,20.8c-0.3,0-0.5-0.1-0.7-0.3l-1.4-1.4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C20.3,20.7,20,20.8,19.8,20.8z"></path><path d="M3,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S3.6,13,3,13z"></path><path d="M23,13h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path><path d="M4.2,20.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C4.7,20.7,4.5,20.8,4.2,20.8z"></path><path d="M18.4,6.6c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C18.9,6.5,18.6,6.6,18.4,6.6z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="moon" data-v-781f9d1b><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg><!--]--></span></span></button></div></div></div><!----><!--]--><!--]--></div></div></div><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-8856f192 data-v-6f008456><span class="container" data-v-6f008456><span class="top" data-v-6f008456></span><span class="middle" data-v-6f008456></span><span class="bottom" data-v-6f008456></span></span></button></div></div></div><!----></header><div class="VPLocalNav" data-v-6b5fd0a9 data-v-92b0f14a><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-92b0f14a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="menu-icon" data-v-92b0f14a><path d="M17,11H3c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S17.6,11,17,11z"></path><path d="M21,7H3C2.4,7,2,6.6,2,6s0.4-1,1-1h18c0.6,0,1,0.4,1,1S21.6,7,21,7z"></path><path d="M21,15H3c-0.6,0-1-0.4-1-1s0.4-1,1-1h18c0.6,0,1,0.4,1,1S21.6,15,21,15z"></path><path d="M17,19H3c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S17.6,19,17,19z"></path></svg><span class="menu-text" data-v-92b0f14a>Menu</span></button><a class="top-link" href="#" data-v-92b0f14a> Return to top </a></div><aside class="VPSidebar" data-v-6b5fd0a9 data-v-55e4c7db><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-55e4c7db><span class="visually-hidden" id="sidebar-aria-label" data-v-55e4c7db> Sidebar Navigation </span><!--[--><div class="group" data-v-55e4c7db><section class="VPSidebarGroup" data-v-55e4c7db data-v-1f69a7ed><div class="title" data-v-1f69a7ed><h2 class="title-text" data-v-1f69a7ed>CSS基础</h2><div class="action" data-v-1f69a7ed><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 24 24" class="icon minus" data-v-1f69a7ed><path d="M19,2H5C3.3,2,2,3.3,2,5v14c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V5C22,3.3,20.7,2,19,2zM20,19c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1V5c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1V19z"></path><path d="M16,11H8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S16.6,11,16,11z"></path></svg><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon plus" data-v-1f69a7ed><path d="M19,2H5C3.3,2,2,3.3,2,5v14c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V5C22,3.3,20.7,2,19,2z M20,19c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1V5c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1V19z"></path><path d="M16,11h-3V8c0-0.6-0.4-1-1-1s-1,0.4-1,1v3H8c-0.6,0-1,0.4-1,1s0.4,1,1,1h3v3c0,0.6,0.4,1,1,1s1-0.4,1-1v-3h3c0.6,0,1-0.4,1-1S16.6,11,16,11z"></path></svg></div></div><div class="items" data-v-1f69a7ed><!--[--><a class="VPLink link" href="/guide/decoration.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>文字装饰</span><!--]--><!----></a><a class="VPLink link" href="/guide/textTransform.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>文本转换</span><!--]--><!----></a><a class="VPLink link" href="/guide/textSpacing.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>文字间距</span><!--]--><!----></a><a class="VPLink link" href="/guide/textShadow.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>文本阴影</span><!--]--><!----></a><a class="VPLink link" href="/guide/list.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>列表</span><!--]--><!----></a><!--]--></div></section></div><div class="group" data-v-55e4c7db><section class="VPSidebarGroup" data-v-55e4c7db data-v-1f69a7ed><div class="title" data-v-1f69a7ed><h2 class="title-text" data-v-1f69a7ed>CSS中级</h2><div class="action" data-v-1f69a7ed><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 24 24" class="icon minus" data-v-1f69a7ed><path d="M19,2H5C3.3,2,2,3.3,2,5v14c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V5C22,3.3,20.7,2,19,2zM20,19c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1V5c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1V19z"></path><path d="M16,11H8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S16.6,11,16,11z"></path></svg><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon plus" data-v-1f69a7ed><path d="M19,2H5C3.3,2,2,3.3,2,5v14c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V5C22,3.3,20.7,2,19,2z M20,19c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1V5c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1V19z"></path><path d="M16,11h-3V8c0-0.6-0.4-1-1-1s-1,0.4-1,1v3H8c-0.6,0-1,0.4-1,1s0.4,1,1,1h3v3c0,0.6,0.4,1,1,1s1-0.4,1-1v-3h3c0.6,0,1-0.4,1-1S16.6,11,16,11z"></path></svg></div></div><div class="items" data-v-1f69a7ed><!--[--><a class="VPLink link" href="/guide/imageSprite.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>图像精灵</span><!--]--><!----></a><a class="VPLink link" href="/guide/selector.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>属性选择器</span><!--]--><!----></a><a class="VPLink link" href="/guide/counter.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>计数器</span><!--]--><!----></a><!--]--></div></section></div><div class="group" data-v-55e4c7db><section class="VPSidebarGroup" data-v-55e4c7db data-v-1f69a7ed><div class="title" data-v-1f69a7ed><h2 class="title-text" data-v-1f69a7ed>CSS高级</h2><div class="action" data-v-1f69a7ed><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 24 24" class="icon minus" data-v-1f69a7ed><path d="M19,2H5C3.3,2,2,3.3,2,5v14c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V5C22,3.3,20.7,2,19,2zM20,19c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1V5c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1V19z"></path><path d="M16,11H8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S16.6,11,16,11z"></path></svg><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon plus" data-v-1f69a7ed><path d="M19,2H5C3.3,2,2,3.3,2,5v14c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V5C22,3.3,20.7,2,19,2z M20,19c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1V5c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1V19z"></path><path d="M16,11h-3V8c0-0.6-0.4-1-1-1s-1,0.4-1,1v3H8c-0.6,0-1,0.4-1,1s0.4,1,1,1h3v3c0,0.6,0.4,1,1,1s1-0.4,1-1v-3h3c0.6,0,1-0.4,1-1S16.6,11,16,11z"></path></svg></div></div><div class="items" data-v-1f69a7ed><!--[--><a class="VPLink link" href="/guide/variable.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>变量</span><!--]--><!----></a><a class="VPLink link" href="/guide/boxSizing.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>Box Sizing</span><!--]--><!----></a><a class="VPLink link active" href="/guide/flexbox.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>Flexbox</span><!--]--><!----></a><a class="VPLink link" href="/guide/media.html" data-v-1f69a7ed data-v-f53f775e data-v-5704c677><!--[--><span class="link-text" data-v-f53f775e>媒体查询</span><!--]--><!----></a><!--]--></div></section></div><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-6b5fd0a9 data-v-a4c57a06><div class="VPDoc has-sidebar" data-v-a4c57a06 data-v-79ca2460><div class="container" data-v-79ca2460><div class="aside" data-v-79ca2460><div class="aside-curtain" data-v-79ca2460></div><div class="aside-container" data-v-79ca2460><div class="aside-content" data-v-79ca2460><div class="VPDocAside" data-v-79ca2460 data-v-779d834d><!--[--><!--]--><!--[--><!--]--><div class="VPDocAsideOutline has-outline" data-v-779d834d data-v-51e5a8ce><div class="content" data-v-51e5a8ce><div class="outline-marker" data-v-51e5a8ce></div><div class="outline-title" data-v-51e5a8ce>On this page</div><nav aria-labelledby="doc-outline-aria-label" data-v-51e5a8ce><span class="visually-hidden" id="doc-outline-aria-label" data-v-51e5a8ce> Table of Contents for current page </span><ul class="root" data-v-51e5a8ce><!--[--><li style="" data-v-51e5a8ce><a class="outline-link" href="#父元素（容器）" data-v-51e5a8ce>父元素（容器）</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#flex-direction-属性" data-v-51e5a8ce>flex-direction 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#flex-wrap-属性" data-v-51e5a8ce>flex-wrap 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#flex-flow-属性" data-v-51e5a8ce>flex-flow 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#justify-content-属性" data-v-51e5a8ce>justify-content 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#align-items-属性" data-v-51e5a8ce>align-items 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#align-content-属性" data-v-51e5a8ce>align-content 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#子元素（项目）" data-v-51e5a8ce>子元素（项目）</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#order-属性" data-v-51e5a8ce>order 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#flex-grow-属性" data-v-51e5a8ce>flex-grow 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#flex-shrink-属性" data-v-51e5a8ce>flex-shrink 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#flex-basis-属性" data-v-51e5a8ce>flex-basis 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#flex-属性" data-v-51e5a8ce>flex 属性</a><!----></li><li style="" data-v-51e5a8ce><a class="outline-link" href="#align-self-属性" data-v-51e5a8ce>align-self 属性</a><!----></li><!--]--></ul></nav></div></div><!--[--><!--]--><div class="spacer" data-v-779d834d></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-79ca2460><div class="content-container" data-v-79ca2460><!--[--><!--]--><main class="main" data-v-79ca2460><div style="position:relative;" class="vp-doc _guide_flexbox" data-v-79ca2460><div><h1 id="flexbox" tabindex="-1">Flexbox <a class="header-anchor" href="#flexbox" aria-hidden="true">#</a></h1><p>弹性框布局模块，可以更轻松地设计灵活的响应式布局结构，而无需使用浮动或定位。</p><h2 id="父元素（容器）" tabindex="-1">父元素（容器） <a class="header-anchor" href="#父元素（容器）" aria-hidden="true">#</a></h2><p>通过将 <code>display</code> 属性设置为 <code>flex</code>，<code>flex</code> 容器将可伸缩：</p><!--[--><div class="example" data-v-3755ee05><div class="flex-container" data-v-3755ee05 data-v-5e7a4142><div class="flex-item" data-v-5e7a4142>1</div><div class="flex-item" data-v-5e7a4142>2</div><div class="flex-item" data-v-5e7a4142>3</div></div></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><p><code>flex</code> 容器属性：<br><code>flex-direction</code><br><code>flex-wrap</code><br><code>flex-flow</code><br><code>justify-content</code><br><code>align-items</code><br><code>align-content</code><br></p><h2 id="flex-direction-属性" tabindex="-1"><code>flex-direction</code> 属性 <a class="header-anchor" href="#flex-direction-属性" aria-hidden="true">#</a></h2><p>作用：定义容器要在哪个方向上堆叠 <code>flex</code> 项目。<br> 常用属性值及效果说明：<br><code>column</code> 值设置垂直堆叠 <code>flex</code> 项目（从上到下）：<br><code>column-reverse</code> 值垂直堆叠 <code>flex</code> 项目（但从下到上）：<br><code>row</code> 值水平堆叠 <code>flex</code> 项目（从左到右）：<br><code>row-reverse</code> 值水平堆叠 <code>flex</code> 项目（但从右到左）：<br></p><!--[--><div class="example" data-v-3755ee05><!--[--><div class="margin-b20" data-v-198b8e91><span data-v-198b8e91> flex-direction: <span class="green bold" data-v-198b8e91>column</span></span></div><div data-v-198b8e91><div class="flex-container" style="flex-direction:column;" data-v-198b8e91><!--[--><div class="flex-item" data-v-198b8e91>1</div><div class="flex-item" data-v-198b8e91>2</div><div class="flex-item" data-v-198b8e91>3</div><!--]--></div></div><button class="el-button el-button--primary" aria-disabled="false" type="button" style="" data-v-198b8e91><!--v-if--><span class=""><!--[-->切换属性值<!--]--></span></button><!--]--></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-b20&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+      flex-direction: 
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;green bold&quot;</span>&gt;</span>{{list[num]}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{&#x27;flex-direction&#x27;: list[num]}&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in 3&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>{{item}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;toggle&quot;</span>&gt;</span>切换属性值<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
+<span class="hljs-keyword">const</span> num = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">const</span> list = [
+  <span class="hljs-string">&#x27;column&#x27;</span>,
+  <span class="hljs-string">&#x27;column-reverse&#x27;</span>,
+  <span class="hljs-string">&#x27;row&#x27;</span>,
+  <span class="hljs-string">&#x27;row-reverse&#x27;</span>
+]
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">toggle</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">if</span> (num.<span class="hljs-property">value</span> &gt;= <span class="hljs-number">3</span>) {
+    num.<span class="hljs-property">value</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span>
+  }
+  num.<span class="hljs-property">value</span>++
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="flex-wrap-属性" tabindex="-1"><code>flex-wrap</code> 属性 <a class="header-anchor" href="#flex-wrap-属性" aria-hidden="true">#</a></h2><p>作用：规定是否应该对 flex 项目换行。<br> 常用属性值及效果说明：<br><code>wrap</code> 值规定 <code>flex</code> 项目将在必要时进行换行：<br><code>nowrap</code> 值规定将不对 <code>flex</code> 项目换行（默认）：<br></p><!--[--><div class="example" data-v-3755ee05><!--[--><div class="margin-b20" data-v-eb016ab2><span data-v-eb016ab2> flex-wrap: <span class="green bold" data-v-eb016ab2>nowrap</span></span></div><div data-v-eb016ab2><div class="flex-container" style="flex-wrap:nowrap;" data-v-eb016ab2><!--[--><div class="flex-item" data-v-eb016ab2>1</div><div class="flex-item" data-v-eb016ab2>2</div><div class="flex-item" data-v-eb016ab2>3</div><div class="flex-item" data-v-eb016ab2>4</div><div class="flex-item" data-v-eb016ab2>5</div><div class="flex-item" data-v-eb016ab2>6</div><div class="flex-item" data-v-eb016ab2>7</div><div class="flex-item" data-v-eb016ab2>8</div><div class="flex-item" data-v-eb016ab2>9</div><div class="flex-item" data-v-eb016ab2>10</div><!--]--></div></div><button class="el-button el-button--primary" aria-disabled="false" type="button" style="" data-v-eb016ab2><!--v-if--><span class=""><!--[-->切换属性值<!--]--></span></button><!--]--></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-b20&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+      flex-wrap: 
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;green bold&quot;</span>&gt;</span>{{list[num]}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{&#x27;flex-wrap&#x27;: list[num]}&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in 10&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>{{item}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;toggle&quot;</span>&gt;</span>切换属性值<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
+<span class="hljs-keyword">const</span> num = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">const</span> list = [
+  <span class="hljs-string">&#x27;nowrap&#x27;</span>,
+  <span class="hljs-string">&#x27;wrap&#x27;</span>
+]
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">toggle</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">if</span> (num.<span class="hljs-property">value</span> &gt;= <span class="hljs-number">1</span>) {
+    num.<span class="hljs-property">value</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span>
+  }
+  num.<span class="hljs-property">value</span>++
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="flex-flow-属性" tabindex="-1"><code>flex-flow</code> 属性 <a class="header-anchor" href="#flex-flow-属性" aria-hidden="true">#</a></h2><p><code>flex-flow</code> 属性是用于同时设置 <code>flex-direction</code> 和 <code>flex-wrap</code> 属性的简写属性。</p><h2 id="justify-content-属性" tabindex="-1"><code>justify-content</code> 属性 <a class="header-anchor" href="#justify-content-属性" aria-hidden="true">#</a></h2><p>作用：用于对齐 <code>flex</code> 项目：<br> 常用属性值及效果说明：<br><code>center</code> 值将 flex 项目在容器的中心对齐：<br><code>flex-start</code> 值将 flex 项目在容器的开头对齐（默认）：<br><code>flex-end</code> 值将 flex 项目在容器的末端对齐：<br><code>space-around</code> 值显示行之前、之间和之后带有空格的 flex 项目：<br><code>space-between</code> 值显示行之间有空格的 flex 项目：<br></p><!--[--><div class="example" data-v-3755ee05><!--[--><div class="margin-b20" data-v-7de6efb3><span data-v-7de6efb3> justify-content: <span class="green bold" data-v-7de6efb3>center</span></span></div><div data-v-7de6efb3><div class="flex-container" style="justify-content:center;" data-v-7de6efb3><!--[--><div class="flex-item" data-v-7de6efb3>1</div><div class="flex-item" data-v-7de6efb3>2</div><div class="flex-item" data-v-7de6efb3>3</div><!--]--></div></div><button class="el-button el-button--primary" aria-disabled="false" type="button" style="" data-v-7de6efb3><!--v-if--><span class=""><!--[-->切换属性值<!--]--></span></button><!--]--></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-b20&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+      justify-content: 
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;green bold&quot;</span>&gt;</span>{{list[num]}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{&#x27;justify-content&#x27;: list[num]}&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in 3&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>{{item}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;toggle&quot;</span>&gt;</span>切换属性值<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
+<span class="hljs-keyword">const</span> num = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">const</span> list = [
+  <span class="hljs-string">&#x27;center&#x27;</span>,
+  <span class="hljs-string">&#x27;flex-start&#x27;</span>,
+  <span class="hljs-string">&#x27;flex-end&#x27;</span>,
+  <span class="hljs-string">&#x27;space-around&#x27;</span>,
+  <span class="hljs-string">&#x27;space-between&#x27;</span>
+]
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">toggle</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">if</span> (num.<span class="hljs-property">value</span> &gt;= <span class="hljs-number">4</span>) {
+    num.<span class="hljs-property">value</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span>
+  }
+  num.<span class="hljs-property">value</span>++
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="align-items-属性" tabindex="-1"><code>align-items</code> 属性 <a class="header-anchor" href="#align-items-属性" aria-hidden="true">#</a></h2><p>作用：用于垂直对齐 <code>flex </code>项目。<br> 常用属性值及效果说明：<br><code>center</code> 值将 <code>flex</code> 项目在容器中间对齐：<br><code>flex-start</code> 值将 <code>flex</code> 项目在容器顶部对齐：<br><code>flex-end</code> 值将弹性项目在容器底部对齐：<br><code>stretch</code> 值拉伸 <code>flex</code> 项目以填充容器（默认）：<br></p><!--[--><div class="example" data-v-3755ee05><!--[--><div class="margin-b20" data-v-6fd3e31e><span data-v-6fd3e31e> align-items: <span class="green bold" data-v-6fd3e31e>center</span></span></div><div class="margin-b20" data-v-6fd3e31e><div class="flex-container" style="align-items:center;" data-v-6fd3e31e><!--[--><div class="flex-item" data-v-6fd3e31e>1</div><div class="flex-item" data-v-6fd3e31e>2</div><div class="flex-item" data-v-6fd3e31e>3</div><!--]--></div></div><button class="el-button el-button--primary" aria-disabled="false" type="button" style="" data-v-6fd3e31e><!--v-if--><span class=""><!--[-->切换属性值<!--]--></span></button><!--]--></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-b20&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+      align-items: 
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;green bold&quot;</span>&gt;</span>{{list[num]}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-b20&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{&#x27;align-items&#x27;: list[num]}&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in 3&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>{{item}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;toggle&quot;</span>&gt;</span>切换属性值<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
+<span class="hljs-keyword">const</span> num = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">const</span> list = [
+  <span class="hljs-string">&#x27;center&#x27;</span>,
+  <span class="hljs-string">&#x27;flex-start&#x27;</span>,
+  <span class="hljs-string">&#x27;flex-end&#x27;</span>,
+  <span class="hljs-string">&#x27;stretch&#x27;</span>
+]
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">toggle</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">if</span> (num.<span class="hljs-property">value</span> &gt;= <span class="hljs-number">3</span>) {
+    num.<span class="hljs-property">value</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span>
+  }
+  num.<span class="hljs-property">value</span>++
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="align-content-属性" tabindex="-1"><code>align-content</code> 属性 <a class="header-anchor" href="#align-content-属性" aria-hidden="true">#</a></h2><p>作用：用于对齐弹性线。<br> 常用属性值及效果说明：<br><code>space-between</code> 值显示的弹性线之间有相等的间距：<br><code>space-around</code> 值显示弹性线在其之前、之间和之后带有空格：<br><code>stretch</code> 值拉伸弹性线以占据剩余空间（默认）：<br><code>center</code> 值在容器中间显示弹性线：<br><code>flex-start</code> 值在容器开头显示弹性线：<br><code>flex-end</code> 值在容器的末尾显示弹性线：<br></p><!--[--><div class="example" data-v-3755ee05><!--[--><div class="margin-b20" data-v-dcd76842><span data-v-dcd76842> align-content: <span class="green bold" data-v-dcd76842>space-between</span></span></div><div class="margin-b20" data-v-dcd76842><div class="flex-container" style="align-content:space-between;" data-v-dcd76842><!--[--><div class="flex-item" data-v-dcd76842>1</div><div class="flex-item" data-v-dcd76842>2</div><div class="flex-item" data-v-dcd76842>3</div><div class="flex-item" data-v-dcd76842>4</div><div class="flex-item" data-v-dcd76842>5</div><div class="flex-item" data-v-dcd76842>6</div><div class="flex-item" data-v-dcd76842>7</div><div class="flex-item" data-v-dcd76842>8</div><div class="flex-item" data-v-dcd76842>9</div><div class="flex-item" data-v-dcd76842>10</div><div class="flex-item" data-v-dcd76842>11</div><div class="flex-item" data-v-dcd76842>12</div><div class="flex-item" data-v-dcd76842>13</div><div class="flex-item" data-v-dcd76842>14</div><div class="flex-item" data-v-dcd76842>15</div><!--]--></div></div><button class="el-button el-button--primary" aria-disabled="false" type="button" style="" data-v-dcd76842><!--v-if--><span class=""><!--[-->切换属性值<!--]--></span></button><!--]--></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-b20&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+      align-content: 
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;green bold&quot;</span>&gt;</span>{{list[num]}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-b20&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{&#x27;align-content&#x27;: list[num]}&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in 15&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>{{item}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;toggle&quot;</span>&gt;</span>切换属性值<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
+<span class="hljs-keyword">const</span> num = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">const</span> list = [
+  <span class="hljs-string">&#x27;space-between&#x27;</span>,
+  <span class="hljs-string">&#x27;space-around&#x27;</span>,
+  <span class="hljs-string">&#x27;stretch&#x27;</span>,
+  <span class="hljs-string">&#x27;center&#x27;</span>,
+  <span class="hljs-string">&#x27;flex-start&#x27;</span>,
+  <span class="hljs-string">&#x27;flex-end&#x27;</span>
+]
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">toggle</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">if</span> (num.<span class="hljs-property">value</span> &gt;= <span class="hljs-number">3</span>) {
+    num.<span class="hljs-property">value</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span>
+  }
+  num.<span class="hljs-property">value</span>++
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="子元素（项目）" tabindex="-1">子元素（项目） <a class="header-anchor" href="#子元素（项目）" aria-hidden="true">#</a></h2><p><code>flex</code> 容器的直接子元素会自动成为弹性（flex）项目。<br> 用于弹性项目的属性有：<br><code>order</code><br><code>flex-grow</code><br><code>flex-shrink</code><br><code>flex-basis</code><br><code>flex</code><br><code>align-self</code><br></p><h2 id="order-属性" tabindex="-1"><code>order</code> 属性 <a class="header-anchor" href="#order-属性" aria-hidden="true">#</a></h2><p><code>order</code> 属性可以改变 <code>flex</code> 项目的顺序。<code>order</code> 值必须是数字，默认值是 0。</p><!--[--><div class="example" data-v-3755ee05><div class="flex-container" data-v-3755ee05 data-v-3df1d99b><div class="flex-item" style="order:3;" data-v-3df1d99b>1</div><div class="flex-item" style="order:2;" data-v-3df1d99b>2</div><div class="flex-item" style="order:4;" data-v-3df1d99b>3</div><div class="flex-item" style="order:1;" data-v-3df1d99b>4</div></div></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;order: 3&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;order: 2&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;order: 4&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;order: 1&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="flex-grow-属性" tabindex="-1"><code>flex-grow</code> 属性 <a class="header-anchor" href="#flex-grow-属性" aria-hidden="true">#</a></h2><p>该属性用来设置当父元素的宽度大于所有子元素的宽度的和时（即父元素会有剩余空间），子元素如何分配父元素的剩余空间。 <code>flex-grow</code>的默认值为0，意思是该元素不索取父元素的剩余空间，如果值大于0，表示索取。值越大，索取的越厉害。<br></p><p>举个例子: 父元素宽400px，有两个子元素：A和B。A宽为100px，B宽为200px。 则空余空间为 400-（100+200）= 100px。 如果A，B都不索取剩余空间，则有100px的空余空间。如果A，B都设索取剩余空间，A设置<code>flex-grow</code>为1，B设置<code>flex-grow</code>为2。则最终A的大小为 自身宽度（100px）+ A获得的剩余空间的宽度（100px/(1/(1+2))）,最终B的大小为 自身宽度（200px）+ B获得的剩余空间的宽度（100px/(2/(1+2))）</p><!--[--><div class="example" data-v-3755ee05><div class="flex-container" data-v-3755ee05 data-v-19f0ed43><div class="flex-item div1" data-v-19f0ed43>A</div><div class="flex-item div2" data-v-19f0ed43>B</div></div></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item div1&quot;</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item div2&quot;</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.div1</span> {
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+}
+<span class="hljs-selector-class">.div2</span> {
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">background-color</span>: red;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="flex-shrink-属性" tabindex="-1"><code>flex-shrink</code> 属性 <a class="header-anchor" href="#flex-shrink-属性" aria-hidden="true">#</a></h2><p>该属性用来设置，当父元素的宽度小于所有子元素的宽度的和时（即子元素会超出父元素），子元素如何缩小自己的宽度的。 当父元素的宽度小于所有子元素的宽度的和时，子元素的宽度会减小，<code>flex-shrink</code>设置的值越大，减小的越厉害。如果值为0，表示不减小。<br></p><p>举个例子: 父元素宽400px，有两子元素：A和B。A宽为200px，B宽为300px。 则A，B总共超出父元素的宽度为(200+300)- 400 = 100px。 如果A，B都不减小宽度，即都设置<code>flex-shrink</code>为0，则会有100px的宽度超出父元素。</p><!--[--><div class="example" data-v-3755ee05><div class="flex-container" data-v-3755ee05 data-v-3ba8a6ad><div class="flex-item div1" data-v-3ba8a6ad>A</div><div class="flex-item div2" data-v-3ba8a6ad>B</div></div></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item div1&quot;</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item div2&quot;</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid blue;
+  <span class="hljs-attribute">box-sizing</span>: content-box;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.div1</span> {
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+}
+<span class="hljs-selector-class">.div2</span> {
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">background-color</span>: red;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><p>如果A不减小宽度:设置flex-shrink为0，B减小。则最终B的大小为 自身宽度(300px)- 总共超出父元素的宽度(100px)= 200px</p><!--[--><div class="example" data-v-3755ee05><div class="flex-container" data-v-3755ee05 data-v-8278fd82><div class="flex-item div1" data-v-8278fd82>A</div><div class="flex-item div2" data-v-8278fd82>B</div></div></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item div1&quot;</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item div2&quot;</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid blue;
+  <span class="hljs-attribute">box-sizing</span>: content-box;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.div1</span> {
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+}
+<span class="hljs-selector-class">.div2</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">background-color</span>: red;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><p>如果A，B都减小宽度，A设置<code>flex-shirk</code>为3，B设置<code>flex-shirk</code>为2。则最终A的大小为 自身宽度(200px)- A减小的宽度(100px * (200px * 3/(200 * 3 + 300 * 2))) = 150px,最终B的大小为 自身宽度(300px)- B减小的宽度(100px * (300px * 2/(200 * 3 + 300 * 2))) = 250px</p><!--[--><div class="example" data-v-3755ee05><div class="flex-container" data-v-3755ee05 data-v-e5caa274><div class="flex-item div1" data-v-e5caa274>A</div><div class="flex-item div2" data-v-e5caa274>B</div></div></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item div1&quot;</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item div2&quot;</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid blue;
+  <span class="hljs-attribute">box-sizing</span>: content-box;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.div1</span> {
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">3</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+}
+<span class="hljs-selector-class">.div2</span> {
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">background-color</span>: red;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="flex-basis-属性" tabindex="-1"><code>flex-basis</code> 属性 <a class="header-anchor" href="#flex-basis-属性" aria-hidden="true">#</a></h2><p><code>flex-basis</code> 属性规定 <code>flex</code> 项目的初始长度。设置了这个属性，<code>width</code>属性就会无效。<br> 下面的例子将第三个弹性项目的初始长度设置为 200 像素：</p><!--[--><div class="example" data-v-3755ee05><div class="flex-container" data-v-3755ee05 data-v-0697623a><div class="flex-item" data-v-0697623a>1</div><div class="flex-item" data-v-0697623a>2</div><div class="flex-item" style="flex-basis:200px;" data-v-0697623a>3</div><div class="flex-item" data-v-0697623a>4</div></div></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-basis: 200px&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--><h2 id="flex-属性" tabindex="-1"><code>flex</code> 属性 <a class="header-anchor" href="#flex-属性" aria-hidden="true">#</a></h2><p><code>flex</code> 属性是 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code> 属性的简写属性。</p><h2 id="align-self-属性" tabindex="-1"><code>align-self</code> 属性 <a class="header-anchor" href="#align-self-属性" aria-hidden="true">#</a></h2><p><code>align-self</code> 属性规定弹性容器内所选项目的对齐方式。<br><code>align-self</code> 属性将覆盖容器的 <code>align-items</code> 属性所设置的默认对齐方式。</p><!--[--><div class="example" data-v-3755ee05><div class="flex-container" data-v-3755ee05 data-v-3a3bb720><div class="flex-item" data-v-3a3bb720>1</div><div class="flex-item" data-v-3a3bb720>2</div><div class="flex-item" style="align-self:center;" data-v-3a3bb720>3</div><div class="flex-item" data-v-3a3bb720>4</div></div></div><div class="source" style="display:none;" data-v-3755ee05 data-v-3755ee05><pre data-v-3755ee05><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;align-self: center&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-item&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css">
+<span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">align-items</span>: stretch;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+}
+<span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#33a06f</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre></div><div class="source toggle" data-v-3755ee05><i class="el-icon" style="" data-v-3755ee05><!--[--><svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-3755ee05><path fill="currentColor" d="m192 384 320 384 320-384z"></path></svg><!--]--></i> 查看源码</div><!--]--></div></div></main><footer class="VPDocFooter" data-v-79ca2460 data-v-04568844><div class="edit-info" data-v-04568844><!----><!----></div><div class="prev-next" data-v-04568844><div class="pager" data-v-04568844><a class="pager-link prev" href="/guide/boxSizing.html" data-v-04568844><span class="desc" data-v-04568844>Previous page</span><span class="title" data-v-04568844>Box Sizing</span></a></div><div class="has-prev pager" data-v-04568844><a class="pager-link next" href="/guide/media.html" data-v-04568844><span class="desc" data-v-04568844>Next page</span><span class="title" data-v-04568844>媒体查询</span></a></div></div></footer><!--[--><!--]--></div></div></div></div></div><!----><!--[--><!--]--></div></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"guide_boxsizing.md\":\"a04edea8\",\"guide_counter.md\":\"7cf604bc\",\"guide_decoration.md\":\"030d09ba\",\"guide_flexbox.md\":\"835565b2\",\"guide_imagesprite.md\":\"6ff1237b\",\"guide_list.md\":\"c8dbdc2e\",\"guide_media.md\":\"df5f3132\",\"guide_selector.md\":\"9686ec56\",\"guide_textshadow.md\":\"8ac8849b\",\"guide_textspacing.md\":\"5a2af1d2\",\"guide_texttransform.md\":\"b8b38220\",\"guide_variable.md\":\"4e465f41\",\"index.md\":\"4facb9c6\"}")</script>
+    <script type="module" async src="/assets/app.cbd7a6cf.js"></script>
+    
+  </body>
+</html>
