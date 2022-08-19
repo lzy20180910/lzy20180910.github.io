@@ -1,0 +1,32 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: mydeploy CI
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+        cache: 'yarn'
+    - run: yarn install
+    - run: yarn docs:build
+    
+    # 部署
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+          PERSONAL_TOKEN: ${{ secrets.DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          # 生成文件的目录
+          PUBLISH_DIR: ./
