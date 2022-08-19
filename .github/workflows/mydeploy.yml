@@ -29,4 +29,4 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.DEPLOY_KEY }}
           PUBLISH_BRANCH: gh-pages
           # 生成文件的目录
-          PUBLISH_DIR: ./
+          PUBLISH_DIR: ./docs/.vitepress/dist
