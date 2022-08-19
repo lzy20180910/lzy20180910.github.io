@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: CSS
-  text: 层叠样式表哈哈哈123
+  text: 层叠样式表
   tagline: Cascading Style Sheets
   actions:
     - theme: brand
