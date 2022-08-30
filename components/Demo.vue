@@ -5,7 +5,7 @@
     </div>
 
     <ElCollapseTransition>
-      <div class="source" v-show="show">
+      <div class="source l_margin" v-show="show">
         <highlightjs autodetect :code="fileSource" />
       </div>
     </ElCollapseTransition>
