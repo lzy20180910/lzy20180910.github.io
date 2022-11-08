@@ -1,16 +1,16 @@
 <template>
   <div class="margin-b20">
     <div>navsprites.gif:</div>
-    <img src="../../.vitepress/public/navsprites.gif" alt="" />
+    <img :src="imgUrl" alt="" />
   </div>
   <div class="margin-b20">
     <span>
       background: 
-      <span class="green bold">url('../../.vitepress/public/navsprites.gif') {{list[num]}}px 0</span>
+      <span class="green bold">url({{imgUrl}}) {{list[num]}}px 0</span>
     </span>
   </div>
   <div class="margin-b20">
-    <div :style="{'background': `url('../../.vitepress/public/navsprites.gif') ${list[num]}px 0`}" class="imageSprite">
+    <div :style="{'background': `url(${imgUrl}) ${list[num]}px 0`}" class="imageSprite">
     </div>
   </div>
   <el-button type="primary" @click="toggle">切换图像精灵</el-button>
@@ -18,7 +18,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import navsprites from '@asset/navsprites.gif'
 const num = ref(0)
+const imgUrl = ref(navsprites)
 const list = [
   '0',
   '-91',

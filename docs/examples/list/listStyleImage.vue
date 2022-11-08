@@ -16,13 +16,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref  } from 'vue'
+import icon1 from '@asset/icon1.png'
+import icon2 from '@asset/icon2.png'
+import icon3 from '@asset/icon3.png'
 const num = ref(0)
-const list = [
-  '../../.vitepress/public/icon1.png',
-  '../../.vitepress/public/icon2.png',
-  '../../.vitepress/public/icon3.png'
-]
+const list = [icon1, icon2, icon3]
+
 function toggle() {
   if (num.value >= 2) {
     num.value = 0
