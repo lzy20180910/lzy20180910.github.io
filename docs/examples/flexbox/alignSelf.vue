@@ -13,7 +13,7 @@
 .flex-container {
   display: flex;
   height: 200px;
-  align-items: stretch;
+  align-items: flex-start;
   background: #fff;
 }
 .flex-item {

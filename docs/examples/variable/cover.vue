@@ -19,8 +19,6 @@ div {
   --white: #ffffff;
 }
 
-div { background-color: var(--blue); }
-
 h2 { border-bottom: 2px solid var(--blue); }
 
 .container {

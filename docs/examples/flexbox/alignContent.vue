@@ -25,7 +25,7 @@ const list = [
   'flex-end'
 ]
 function toggle() {
-  if (num.value >= 3) {
+  if (num.value >= 5) {
     num.value = 0
     return
   }
