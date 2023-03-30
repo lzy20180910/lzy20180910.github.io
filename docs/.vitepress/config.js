@@ -1,7 +1,7 @@
 import { mdPlugin } from './config/plugins.js'
 
 module.exports = {
-  title: 'CSS',
+  title: '技术视野',
   description: 'Just playing around.',
   markdown: {
     config: (md) => mdPlugin(md)

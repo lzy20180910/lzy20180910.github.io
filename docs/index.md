@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: CSS
-  text: 层叠样式表
-  tagline: Cascading Style Sheets
+  name: 前端
+  text: 技术视野
+  tagline: Technical Vision
   actions:
     - theme: brand
       text: 开始
@@ -21,3 +21,11 @@ features:
     title: Function description
     details: CSS 节省了大量工作
 ---
+
+<!-- 除了可以通过自定义Layout来实现自定义主题外，还可以通过注释上面的内容（保留layout: home），然后引入自定义的组件这个方式自定义首页的内容，这样能保留顶部导航，自定义导航下面的内容 -->
+<!-- <basic />
+
+<script>
+  import basic from './examples/boxSizing/basic.vue'
+  
+</script> -->

@@ -10,8 +10,15 @@ export function MarkdownTransform() {
 
       const componentId = path.basename(id, '.md')
 
-      return `${code}\n<script setup>
-        const demos = import.meta.globEager('../examples/${componentId}/*.vue')
+      return `${code}\n<script>
+        export default {
+          setup() {
+            const demos = import.meta.globEager('../examples/${componentId}/*.vue')
+            return {
+              demos
+            }
+          }
+        }
       </script>
       `
     }

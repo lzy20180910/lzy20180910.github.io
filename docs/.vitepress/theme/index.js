@@ -7,8 +7,11 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import '../../../style/index.css'
+// import Layout from './Layout.vue'
+
 export default {
   ...DefaultTheme,
+  // Layout, // 这个配置可以完全自定制主题，访问网站的时候这个组件的内容为首页
   enhanceApp({ app }) {
     app.component('Demo', Demo)
     app.use(hljsVuePlugin)
