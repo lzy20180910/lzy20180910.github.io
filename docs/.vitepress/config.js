@@ -3,10 +3,21 @@ import { mdPlugin } from './config/plugins.js'
 module.exports = {
   title: '技术视野',
   description: 'Just playing around.',
+  lastUpdated: true,
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: '/logo.svg'
+      }
+    ]
+  ],
   markdown: {
     config: (md) => mdPlugin(md)
   },
   themeConfig: {
+    lastUpdatedText: '最后更新时间',
     nav: [
       { text: '指南', link: '/guide/textTransform' },
     ],
@@ -38,6 +49,13 @@ module.exports = {
           { text: '媒体查询', link: '/guide/media' }
         ]
       }
-    ]
+    ],
+    socialLinks: [
+      {
+        icon: 'github',
+        link: 'https://github.com/lzy20180910/lzy20180910.github.io'
+      }
+    ],
+    logo: '/logo.svg'
   }
 }
