@@ -18,7 +18,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import navsprites from '@asset/navsprites.gif'
+import navsprites from '/navsprites.gif'
 const num = ref(0)
 const imgUrl = ref(navsprites)
 const list = [

@@ -4,8 +4,7 @@ import path from 'path'
 export default {
   resolve: {
     alias: [
-      { find: '@', replacement: path.resolve(__dirname, '../components') },
-      { find: '@asset', replacement: path.resolve(__dirname, './.vitepress/public') }
+      { find: '@', replacement: path.resolve(__dirname, '../src') }
     ]
   },
   plugins: [

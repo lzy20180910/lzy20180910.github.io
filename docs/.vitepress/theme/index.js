@@ -1,12 +1,12 @@
 import DefaultTheme from 'vitepress/theme'
-import Demo from '@/Demo.vue'
+import Demo from '@/components/Demo.vue'
 import 'highlight.js/styles/atom-one-dark.css'
 import 'highlight.js/lib/common'
 import hljsVuePlugin from '@highlightjs/vue-plugin'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-import '../../../style/index.css'
+import '@/style/index.css'
 // import Layout from './Layout.vue'
 
 export default {

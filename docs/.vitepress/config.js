@@ -9,6 +9,7 @@ module.exports = {
       'link',
       {
         rel: 'icon',
+        type: "image/svg+xml",
         href: '/logo.svg'
       }
     ]

@@ -17,9 +17,9 @@
 
 <script setup>
 import { ref  } from 'vue'
-import icon1 from '@asset/icon1.png'
-import icon2 from '@asset/icon2.png'
-import icon3 from '@asset/icon3.png'
+import icon1 from '/icon1.png'
+import icon2 from '/icon2.png'
+import icon3 from '/icon3.png'
 const num = ref(0)
 const list = [icon1, icon2, icon3]
 
