@@ -9,13 +9,14 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.4"
+    "vitepress": "^1.0.0-alpha.4",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
     "@highlightjs/vue-plugin": "^2.1.0",
     "element-plus": "^2.2.12",
-    "highlight.js": "^11.6.0",
-    "markdown-it-container": "^3.0.0"
+    "highlight.js": "^11.6.0"
   }
 }
