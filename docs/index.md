@@ -9,7 +9,7 @@ hero:
     src: /logo.svg
     alt: VitePress
   actions:
-    - theme: brand
+    - theme: alt
       text: 开始
       link: /guide/textTransform
 
