@@ -11,6 +11,7 @@ module.exports = {
     config: (md) => mdPlugin(md)
   },
   themeConfig: {
+    outlineTitle: '本节目录',
     lastUpdatedText: '最后更新时间',
     nav: [
       { text: "首页", link: "/" },
@@ -22,7 +23,9 @@ module.exports = {
         {
           text: '文档构建',
           items: [
-            { text: '前言', link: '/vision/document/preface' }
+            { text: '前言', link: '/vision/document/preface' },
+            { text: 'Vitepress介绍及快速使用', link: '/vision/document/quickUse' },
+            { text: 'Vitepress配置', link: '/vision/document/vitepressConfig' },
           ]
         }
       ],
@@ -52,6 +55,24 @@ module.exports = {
         link: 'https://github.com/lzy20180910/lzy20180910.github.io'
       }
     ],
-    logo: '/logo.svg'
+    logo: '/logo.svg',
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2022-present LZY'
+    },
+    editLink: {
+      pattern: ({ relativePath }) => {
+        return `https://github.com/lzy20180910/lzy20180910.github.io/tree/master/docs/${relativePath}`
+      },
+      text: '在GitHub上编辑这个页面'
+    },
+    carbonAds: {
+      code: 'your-carbon-code',
+      placement: 'your-carbon-placement'
+    },
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    }
   }
 }
