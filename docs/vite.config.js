@@ -1,14 +1,29 @@
 import { MarkdownTransform } from './.vitepress/config/markdown-transform'
 import path from 'path'
+import { SearchPlugin } from "vitepress-plugin-search";
+import flexSearchIndexOptions from "flexsearch";
+//default options
+var options = {
+  ...flexSearchIndexOptions,
+  previewLength: 100, //搜索结果预览长度
+  buttonLabel: "搜索",
+  placeholder: "情输入关键词",
+  // 加上这两个配置才能支持中文搜索
+  encode: false,
+  tokenize: "full"
+};
+
 
 export default {
+
   resolve: {
     alias: [
       { find: '@', replacement: path.resolve(__dirname, './') }
     ]
   },
   plugins: [
-    MarkdownTransform()
+    MarkdownTransform(),
+    SearchPlugin(options)
   ],
   css: {
     preprocessorOptions: {
