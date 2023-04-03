@@ -5,6 +5,9 @@ hero:
   name: 前端
   text: 技术视野
   tagline: Technical Vision
+  image:
+    src: /logo.svg
+    alt: VitePress
   actions:
     - theme: brand
       text: 开始
