@@ -1,0 +1,1 @@
+import{_ as s,c as a,o,N as t}from"./chunks/framework.10b5afdb.js";const F=JSON.parse('{"title":"属性选择器","description":"","frontmatter":{},"headers":[],"relativePath":"guide/selector.md","lastUpdated":1680487526000}'),e={name:"guide/selector.md"},l=t("",24),n=[l];function p(c,r,u,i,D,d){return o(),a("div",null,n)}const C=s(e,[["render",p]]);export{F as __pageData,C as default};
