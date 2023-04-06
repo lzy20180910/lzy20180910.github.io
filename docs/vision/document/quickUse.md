@@ -1,4 +1,6 @@
-# Vitepress介绍
+# 前言
+本文档使用<a href="https://vitepress.dev/" target="_blank">`vitepress`</a>构建，本章讲解如何使用`vitepress`构建一个属于你自己的博客！并且讲解如何使用`github pages`和`github actions`功能来持续集成和自动部署你的博客
+## Vitepress介绍
 `VitePress`是一个静态网站生成器，基于`Vite`构建，非常适合用来构建博客和文档，Vue3跟Element-Plus的官方文档都是用它来构建的。
 
 ## 快速上手

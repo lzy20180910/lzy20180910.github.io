@@ -15,7 +15,7 @@ module.exports = {
     lastUpdatedText: '最后更新时间',
     nav: [
       { text: "首页", link: "/" },
-      { text: '视野', link: '/vision/document/preface' },
+      { text: '视野', link: '/vision/document/quickUse' },
       { text: '笔记', link: '/guide/textTransform' },
     ],
     sidebar: {
@@ -23,9 +23,22 @@ module.exports = {
         {
           text: '文档构建',
           items: [
-            { text: '前言', link: '/vision/document/preface' },
-            { text: 'Vitepress介绍及快速使用', link: '/vision/document/quickUse' },
-            { text: 'Vitepress配置', link: '/vision/document/vitepressConfig' },
+            { text: 'vitepress', link: '/vision/document/quickUse' },
+            { text: '配置', link: '/vision/document/vitepressConfig' },
+            { text: '添加文档搜索功能', link: '/vision/document/search' },
+            { text: '路由', link: '/vision/document/routing' },
+            { text: '静态资源处理', link: '/vision/document/assetsHandle' },
+            { text: 'Markdown扩展', link: '/vision/document/mdExtend' },
+            { text: '部署', link: '/vision/document/deploy' }
+          ]
+        },
+        {
+          text: '命令行工具',
+          items: [
+            { text: '创建你的第一个cli', link: '/vision/cli/command' },
+            { text: 'Commander', link: '/vision/cli/commander' },
+            { text: 'inquirer', link: '/vision/cli/inquirer' },
+            { text: '美化控制台输出', link: '/vision/cli/beautify' }
           ]
         }
       ],

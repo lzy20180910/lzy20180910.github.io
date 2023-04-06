@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: alt
       text: 开始
-      link: /guide/textTransform
+      link: /vision/document/quickUse
 
 features:
   - icon: ⚡️
