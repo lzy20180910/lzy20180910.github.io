@@ -6,7 +6,7 @@
 
     <ElCollapseTransition>
       <div class="source l_margin" v-show="show">
-        <highlightjs autodetect :code="fileSource" />
+        <div class="l_margin_t" v-html="fileSource"></div>
       </div>
     </ElCollapseTransition>
 
@@ -72,5 +72,8 @@ const fileSource = computed(() => decodeURIComponent(props.source))
   }
   .l_margin {
     margin-top: -1px;
+  }
+  .l_margin_t{
+    margin-top: -16px;
   }
 </style>

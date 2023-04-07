@@ -19,11 +19,13 @@ export const mdPlugin = md => {
           )
         }
         if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
+        // 改用内置的markdown扩展语法，使用```vue```来处理组件demo源码的高亮，放弃highlight，highlight在生产环境会有问题
+        let str = '```vue\n' + source + '\n```'
         return `<Demo
           :demos="demos"
           path="${sourceFile}"
           source="${encodeURIComponent(
-            source
+            md.render(str)
           )}"
         >`;
       }

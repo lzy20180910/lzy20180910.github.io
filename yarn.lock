@@ -180,11 +180,6 @@
   dependencies:
     "@floating-ui/core" "^0.7.3"
 
-"@highlightjs/vue-plugin@^2.1.0":
-  "integrity" "sha512-E+bmk4ncca+hBEYRV2a+1aIzIV0VSY/e5ArjpuSN9IO7wBJrzUE2u4ESCwrbQD7sAy+jWQjkV5qCCWgc+pu7CQ=="
-  "resolved" "https://registry.npmmirror.com/@highlightjs/vue-plugin/-/vue-plugin-2.1.0.tgz"
-  "version" "2.1.0"
-
 "@popperjs/core@npm:@sxzz/popperjs-es@^2.11.7":
   "integrity" "sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ=="
   "resolved" "https://registry.npmmirror.com/@sxzz/popperjs-es/-/popperjs-es-2.11.7.tgz"
@@ -558,11 +553,6 @@
   dependencies:
     "function-bind" "^1.1.1"
 
-"highlight.js@^11.0.1", "highlight.js@^11.6.0":
-  "integrity" "sha512-ig1eqDzJaB0pqEvlPVIpSSyMaO92bH1N2rJpLMN/nX396wTpDA4Eq0uK+7I/2XG17pFaaKE0kjV/XPeGt7Evjw=="
-  "resolved" "https://registry.npmmirror.com/highlight.js/-/highlight.js-11.6.0.tgz"
-  "version" "11.6.0"
-
 "is-core-module@^2.9.0":
   "integrity" "sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw=="
   "resolved" "https://registry.npmmirror.com/is-core-module/-/is-core-module-2.11.0.tgz"
@@ -815,7 +805,7 @@
   "resolved" "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.13.6.tgz"
   "version" "0.13.6"
 
-"vue@^2.6.0 || ^3.2.0", "vue@^3", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.37", "vue@^3.2.47", "vue@3", "vue@3.2.47":
+"vue@^2.6.0 || ^3.2.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.37", "vue@^3.2.47", "vue@3", "vue@3.2.47":
   "integrity" "sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ=="
   "resolved" "https://registry.npmmirror.com/vue/-/vue-3.2.47.tgz"
   "version" "3.2.47"
