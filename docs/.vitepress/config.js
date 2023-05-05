@@ -40,6 +40,17 @@ module.exports = {
             { text: 'inquirer', link: '/vision/cli/inquirer' },
             { text: '美化控制台输出', link: '/vision/cli/beautify' }
           ]
+        },
+        {
+          text: 'ElementUI',
+          items: [
+            { text: '全局引入与按需引入', link: '/vision/element/introduce' },
+            { text: '多层级组件间的通讯', link: '/vision/element/communication' },
+            { text: '指令-clickoutside', link: '/vision/element/clickoutside' },
+            { text: '指令-repeatClick', link: '/vision/element/repeatClick' },
+            { text: '隐藏组件-ElScrollbar', link: '/vision/element/scrollbar' },
+            { text: '组件-loading', link: '/vision/element/loading' }
+          ]
         }
       ],
       "/guide/": [
@@ -79,10 +90,10 @@ module.exports = {
       },
       text: '在GitHub上编辑这个页面'
     },
-    carbonAds: {
-      code: 'your-carbon-code',
-      placement: 'your-carbon-placement'
-    },
+    // carbonAds: {
+    //   code: 'your-carbon-code',
+    //   placement: 'your-carbon-placement'
+    // },
     docFooter: {
       prev: '上一页',
       next: '下一页'
