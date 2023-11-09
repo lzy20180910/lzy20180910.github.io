@@ -33,6 +33,8 @@ module.exports = {
     config: (md) => mdPlugin(md)
   },
   themeConfig: {
+    // 设置为deep时，页面右边快速导航将展示除h1之外的标题
+    outline: 'deep',
     // 页面右边快速导航自定义文字标题
     outlineTitle: '本节目录',
     lastUpdatedText: '最后更新时间',

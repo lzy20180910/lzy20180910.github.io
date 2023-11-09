@@ -23,9 +23,9 @@
   #1ef310);
 
   --vp-home-hero-image-background-image: linear-gradient(-45deg,
-  #fe343400 50%,
+  #b90909 50%,
   #b90909 50%);
-  --vp-home-hero-image-filter: blur(40px);
+  --vp-home-hero-image-filter: blur(50px);
 }
 
 /* 覆盖搜索按钮样式 */

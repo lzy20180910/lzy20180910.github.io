@@ -11,6 +11,7 @@ module.exports = {
     config: (md) => mdPlugin(md)
   },
   themeConfig: {
+    outline: 'deep',
     outlineTitle: '本节目录',
     lastUpdatedText: '最后更新时间',
     nav: [
@@ -50,6 +51,15 @@ module.exports = {
             { text: '指令-repeatClick', link: '/vision/element/repeatClick' },
             { text: '隐藏组件-ElScrollbar', link: '/vision/element/scrollbar' },
             { text: '组件-loading', link: '/vision/element/loading' }
+          ]
+        },
+        {
+          text: 'webpack',
+          items: [
+            { text: 'webpack是什么', link: '/vision/webpack/start' },
+            { text: '配置文件', link: '/vision/webpack/config' },
+            { text: 'webpack打包后的输入内容含义解析', link: '/vision/webpack/inputContent' },
+            { text: 'loader是什么', link: '/vision/webpack/loader' }
           ]
         }
       ],
