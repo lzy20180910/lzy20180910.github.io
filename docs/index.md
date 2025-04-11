@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: 前端
-  text: 技术视野
+  text: 技术视野-测试
   tagline: I am not afraid of tomorrow for I have seen yesterday and love today. 
   image:
     src: /logo.svg
